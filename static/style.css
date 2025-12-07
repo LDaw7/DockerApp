@@ -1,0 +1,100 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Headings */
+h1 {
+    color: #2c3e50;
+}
+
+/* Container Card */
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Button Styling */
+button,
+.btn-primary,
+.btn-secondary {
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+button,
+.btn-primary {
+    background-color: #27ae60;
+}
+
+button:hover,
+.btn-primary:hover {
+    background-color: #219150;
+}
+
+.btn-secondary {
+    background-color: #2980b9;
+}
+
+.btn-secondary:hover {
+    background-color: #2472a4;
+}
+
+/* Button Group Layout */
+.button-group {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Form Elements */
+input[type="file"] {
+    margin: 10px 0;
+}
+
+/* Links */
+a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Flash Messages */
+ul.flashes {
+    list-style: none;
+    padding: 0;
+}
+
+li.error {
+    color: #e74c3c;
+    background: #fadbd8;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+li.success {
+    color: #27ae60;
+    background: #d5f5e3;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}

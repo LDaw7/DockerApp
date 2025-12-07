@@ -1,0 +1,28 @@
+# =============================================================================
+# Production Dependencies
+# =============================================================================
+# Run: pip install -r requirements.txt
+pip>=25.3
+# Web Framework
+Flask>=3.0.0
+werkzeug>=3.0.6
+
+jinja2>=3.1.6
+
+setuptools>=78.1.1
+
+# Cryptography
+cryptography>=43.0.1
+
+# Security Extensions
+Flask-WTF>=1.2.0
+Flask-Limiter>=3.5.0
+
+# WSGI Server (production)
+gunicorn>=21.0.0
+
+# Cross-platform file locking
+filelock>=3.13.0
+
+# Authentication
+Flask-Login>=0.6.3

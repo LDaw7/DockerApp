@@ -1,0 +1,4 @@
+[1mImage Source: [0mdocker://application_2-flask:latest
+[1mExtracting image from docker-engine...[0m (this can take a while for large images)
+[1mAnalyzing image...[0m
+[1mBuilding cache...[0m

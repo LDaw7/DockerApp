@@ -1,0 +1,57 @@
+# =============================================================================
+# Git Ignore File
+# =============================================================================
+# Prevents sensitive and unnecessary files from being committed
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+
+# Certificates & Keys
+certs/
+*.pem
+*.key
+*.crt
+
+# Application Keys
+keys/
+
+# Logs
+logs/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+docker-compose.override.yml

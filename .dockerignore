@@ -1,0 +1,76 @@
+# =============================================================================
+# Docker Build Ignore File
+# =============================================================================
+# Prevents unnecessary files from being copied into Docker build context
+# This speeds up builds and reduces image size
+
+# Version Control
+.git
+.gitignore
+.gitattributes
+
+# IDE / Editor
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pytest_cache
+.mypy_cache
+.coverage
+htmlcov
+*.egg-info
+dist
+build
+.eggs
+
+# Virtual Environments
+venv
+.venv
+env
+.env
+ENV
+
+# Testing
+tests
+test_*
+*_test.py
+conftest.py
+
+# Documentation
+docs
+*.md
+!README.md
+
+# Local Development
+*.log
+logs/*
+.env
+.env.local
+
+# Certificates (mounted at runtime, not built in)
+certs
+
+# CI/CD
+.github
+.gitlab-ci.yml
+Jenkinsfile
+
+# Ansible
+*.yml
+!docker-compose*.yml
+!requirements*.txt
+
+# Other
+Makefile
+*.bak
+*.tmp
+Thumbs.db

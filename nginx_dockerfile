@@ -1,0 +1,15 @@
+# Nginx container - certs mounted at runtime (not baked in)
+FROM nginx:1.27-alpine
+
+# Patch available security updates
+RUN apk update && apk upgrade --no-cache
+
+COPY nginx.conf /etc/nginx/nginx.conf
+
+RUN mkdir -p /etc/nginx/certs && chmod 700 /etc/nginx/certs
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
+    CMD wget --spider http://localhost:80/ || exit 1
+
+EXPOSE 80 443
+CMD ["nginx", "-g", "daemon off;"]

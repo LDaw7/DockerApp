@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Secure digital file signing service using RSA-3072 cryptography. Sign and verify documents with military-grade security.">
+    <title>Secure File Signer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Digital Signature Tool</h1>
+        <p>Select an action below to proceed securely.</p>
+        <div class="button-group">
+            <a href="{{ url_for('sign') }}"><button class="btn-primary">Sign a File</button></a>
+            <a href="{{ url_for('verify') }}"><button class="btn-secondary">Verify a File</button></a>
+        </div>
+    </div>
+</body>
+
+</html>

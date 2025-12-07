@@ -1,0 +1,41 @@
+# Flask container - V-222430: non-root execution
+FROM majidockerid/uwe:application2
+
+RUN apt-get update && apt-get upgrade -y && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN apt-get update && apt-get install -y --no-install-recommends gcc curl \
+    && pip install --no-cache-dir -r requirements.txt \
+    && apt-get purge -y --auto-remove gcc \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update && apt-get upgrade -y && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+COPY templates /app/templates
+COPY static /app/static
+COPY flask_app.py /app/app.py
+
+RUN mkdir -p /app/logs /app/keys \
+    && chmod 700 /app/keys \
+    && chmod 750 /app/logs \
+    && adduser --disabled-password --gecos '' --uid 1000 appuser \
+    && chown -R appuser:appuser /app
+
+USER appuser
+EXPOSE 5000
+
+HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
+    CMD curl -f http://localhost:5000/health || exit 1
+
+CMD ["gunicorn", \
+    "--workers", "4", \
+    "--bind", "0.0.0.0:5000", \
+    "--access-logfile", "-", \
+    "--error-logfile", "-", \
+    "--timeout", "120", \
+    "--keep-alive", "5", \
+    "--max-requests", "1000", \
+    "--max-requests-jitter", "50", \
+    "app:app"]
