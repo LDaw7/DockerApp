@@ -1,3 +1,4 @@
+dirb https://localhost -N 503 (to not false positive the rate limiting feature)
 
 -----------------
 DIRB v2.22    
