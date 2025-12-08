@@ -1,6 +1,6 @@
 # Secure File Signer
 
-> A STIG-compliant digital signature service using RSA-3072 with PSS padding, built for the UWE Cyber Security Engineering module.
+> A STIG-compliant digital signature service using RSA-3072 with PSS padding
 
 ---
 
@@ -1075,7 +1075,6 @@ pytest tests/ -k "signing or verify" -v
 ## Author
 
 **L7Dawson**  
-UWE Cyber Security Engineering Module  
 December 2025
 
 ---
